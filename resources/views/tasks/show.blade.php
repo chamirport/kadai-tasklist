@@ -4,8 +4,20 @@
 
     <h1>id = {{ $task->id }} のメッセージ詳細ページ</h1>
 
-    <p>タスク: {{ $task->content }}</p> 
-    <p>ステータス: {{ $task->status }}</p>
+   <table class="table table-bordered">
+        <tr>
+            <th>id</th>
+            <td>{{ $task->id }}</td>
+        </tr>
+        <tr>
+            <th>タスク</th>
+            <td>{{ $task->content }}</td>
+        </tr>
+        <tr>
+            <th>ステータス</th>
+            <td>{{ $task->status }}</td>
+        </tr>
+    </table>
 
     {!! link_to_route('tasks.edit', 'このメッセージを編集', ['id' => $task->id], ['class' => 'btn btn-default']) !!}
 
